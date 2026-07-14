@@ -17,6 +17,19 @@
                 <p><strong>저자:</strong> <span id="detail-authors"></span></p>
                 <p><strong>가격:</strong> <span id="detail-price"></span>원</p>
                 <hr>
+                
+                <div class="cart-control">
+                    <label>주문수량 </label>
+                    <button onclick="changeQuantity(-1)">-</button>
+                    <input type="number" id="quantity" value="1" min="1" readonly>
+                    <button onclick="changeQuantity(1)">+</button>
+                </div>
+                <p><strong>합계:</strong> <span id="total-price">0</span>원</p>
+                <div class="button-group">
+                    <button onclick="addToCart()">장바구니 담기</button>
+                    <button>바로구매</button>
+                </div>
+                <hr>
                 <p id="detail-desc"></p>
             </div>
         </div>

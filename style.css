@@ -306,3 +306,29 @@ body {
     line-height: 1.6;
     word-break: break-all; /* 긴 영어 단어나 링크가 영역을 벗어나는 것 방지 */
 }
+
+.footer {
+    background-color: #f8f8f8;
+    border-top: 1px solid #ddd;
+    padding: 30px 0;
+    margin-top: 50px;
+    font-size: 13px;
+    color: #666;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex; /* 좌우 배치 핵심 */
+    justify-content: space-between;
+}
+
+.footer-links { margin-bottom: 15px; }
+.footer-links span { margin-right: 10px; cursor: pointer; }
+
+.family-site, .sns-site {
+    padding: 8px;
+    margin-bottom: 10px;
+    display: block;
+    width: 200px;
+}

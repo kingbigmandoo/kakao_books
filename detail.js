@@ -10,6 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('detail-desc').innerText = bookData.contents || '상세 내용이 없습니다.';
         document.getElementById('detail-thumb').src = bookData.thumbnail;
 
+        // 상세 설명글 처리 (200자 제한 및 ... 추가)
+        const rawDesc = bookData.contents || '상세 내용이 없습니다.';
+        const displayDesc = rawDesc.length > 200 ? rawDesc.substring(0, 200) + '...' : rawDesc;
+        document.getElementById('detail-desc').innerText = displayDesc;
+
         // 초기 합계 금액 설정
         updateTotalPrice();
     } else {

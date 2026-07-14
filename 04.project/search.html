@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>검색 결과</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <button onclick="history.back()">◀ 뒤로가기</button>
+        <h1>검색 결과</h1>
+    </header>
+    
+    <section class="book-list-section">
+        <div class="grid-container" id="searchResultList">
+            </div>
+    </section>
+
+    <script src="main.js"></script>
+    <script>
+        // 페이지 로드 시 URL 파라미터에서 검색어 추출
+        const params = new URLSearchParams(window.location.search);
+        const query = params.get('q');
+        if (query) {
+            searchBooks('searchResultList', query);
+        }
+    </script>
+</body>
+</html>

@@ -254,6 +254,7 @@ body {
 /* 광고 */
 .ad-container {
     display: flex;
+    flex-wrap: nowrap;
     justify-content: center; /* 핵심: 자식들을 가로 가운데로 정렬 */
     gap: 20px;               /* 두 박스 사이의 간격 */
     width: 100%;             /* 부모 전체 너비 사용 */
@@ -261,10 +262,17 @@ body {
 
 .ad-box {
     display: flex;
+    min-width: 0;
     align-items: center;
     width: 700px;
     padding: 20px;
     border-radius: 8px;
+}
+
+.ad-box img {
+  width: 100%;      /* 부모 크기에 맞춰 줄어듦 */
+  height: auto;
+  display: block;   /* 사진 아래 공백 제거 */
 }
 
 /* details.html css 수정 */
@@ -282,7 +290,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    height: auto !important; /* 강제로 높이를 자동 확장 */
+    height: auto; /* 강제로 높이를 자동 확장 */
     overflow: visible;       /* 자식 내용이 넘쳐도 잘리지 않게 설정 */
     align-items: flex-start;
     padding-bottom: 50px;    /* 하단 여백 추가 */
@@ -297,14 +305,18 @@ body {
 /* 텍스트 영역 (설명이 잘리는 주된 원인 해결) */
 .info {
     flex: 1;
-    min-width: 300px; /* 창이 작아져도 최소한의 너비 유지 */
+    min-width: 0px; /* 창이 작아져도 최소한의 너비 유지 */
+    padding: 20px;
+    height: auto;
 }
 
 /* 설명글 영역 */
 #detail-desc {
-    white-space: pre-line; /* 줄바꿈을 유지하여 내용이 뭉치지 않게 함 */
-    line-height: 1.6;
-    word-break: break-all; /* 긴 영어 단어나 링크가 영역을 벗어나는 것 방지 */
+    white-space: pre-line;
+    line-height: 2.0;
+    word-break: break-word;
+    width: 100%;  
+    height: auto;      /* 부모 영역의 100%를 쓰도록 설정 */
 }
 
 .footer {
@@ -332,4 +344,15 @@ body {
     margin-bottom: 10px;
     display: block;
     width: 200px;
+}
+
+.company-info {
+    line-height: 3.0; /* 줄과 줄 사이의 간격을 넓혀서 답답함을 해소합니다 */
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.company-info br {
+    display: block;
+    margin-bottom: 5px; /* 줄바꿈 지점에 추가 간격 */
 }

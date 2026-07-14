@@ -4,7 +4,7 @@ async function searchBooks(targetId, queryKeyword) {
     const container = document.getElementById(targetId);
     
     try {
-        const response = await fetch(`https://dapi.kakao.com/v3/search/book?query=${encodeURIComponent(queryKeyword)}&size=7`, {
+        const response = await fetch(`https://dapi.kakao.com/v3/search/book?query=${encodeURIComponent(queryKeyword)}&size=5`, {
             method: 'GET',
             headers: { 'Authorization': `KakaoAK ${REST_API_KEY}` }
         });

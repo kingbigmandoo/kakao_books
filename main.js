@@ -49,7 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM 완전히 로드됨");
 
     searchBooks('bookList', '베스트셀러'); 
-    searchBooks('mdList', '자기계발');     
+    searchBooks('mdList', '자기계발');
+    searchBooks('itList', 'IT');     
     
     // 2. 검색창 아이콘 클릭 시 검색 실행
     const searchBtn = document.getElementById('searchBtn');

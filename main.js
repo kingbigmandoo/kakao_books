@@ -23,7 +23,7 @@ async function searchBooks(targetId, queryKeyword) {
         
         books.forEach(book => {
             const card = document.createElement('div');
-            card.className = 'book-card';
+            card.className = 'card';
             card.innerHTML = `
                 <img src="${book.thumbnail || 'https://via.placeholder.com/120x174'}" class="book-thumbnail">
                 <div class="book-title">${book.title}</div>

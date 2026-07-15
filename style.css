@@ -356,3 +356,15 @@ body {
     display: block;
     margin-bottom: 5px; /* 줄바꿈 지점에 추가 간격 */
 }
+
+.card:hover {
+    cursor: pointer; /* 마우스를 올리면 손가락 모양으로 변경 */
+}
+
+.card {
+    transition: transform 0.3s ease; /* 0.3초 동안 부드럽게 변화 */
+}
+
+.card:hover {
+    transform: scale(1.05); /* 요소의 크기를 5% 키움 (앞으로 당겨지는 느낌) */
+}
